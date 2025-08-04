@@ -1,0 +1,252 @@
+[
+    {
+        "word": "resilient",
+        "meaning": "Able to recover quickly from difficulties; tough and flexible.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "soft",
+        "meaning": "Easy to press, not hard or firm.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "bright",
+        "meaning": "Giving off a lot of light.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "serendipity",
+        "meaning": "The occurrence of fortunate events by chance.",
+        "tags": ["noun"]
+    },
+    {
+        "word": "brief",
+        "meaning": "Short in time, duration, or length.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "complex",
+        "meaning": "Made of many connected parts; not simple.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "warm",
+        "meaning": "Having a comfortably high temperature.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "divide",
+        "meaning": "To separate into parts or groups.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "eager",
+        "meaning": "Wanting very much to do or have something.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "notice",
+        "meaning": "To become aware of something or someone.",
+        "tags": ["verb", "noun"]
+    },
+    {
+        "word": "origin",
+        "meaning": "The beginning or cause of something.",
+        "tags": ["noun"]
+    },
+    {
+        "word": "patient",
+        "meaning": "Able to accept delays or problems without getting angry.",
+        "tags": ["adjective", "noun"]
+    },
+    {
+        "word": "quality",
+        "meaning": "The standard of something as measured against other things.",
+        "tags": ["noun"]
+    },
+    {
+        "word": "ambiguous",
+        "meaning": "Open to more than one interpretation; not having one obvious meaning.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "benevolent",
+        "meaning": "Well-meaning and kindly; showing goodwill.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "candid",
+        "meaning": "Truthful and straightforward; frank.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "diligent",
+        "meaning": "Showing care and effort in one's work or duties.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "elaborate",
+        "meaning": "Involving many details; complicated or detailed.",
+        "tags": ["adjective", "verb"]
+    },
+    {
+        "word": "feasible",
+        "meaning": "Possible and practical to do easily or conveniently.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "gratitude",
+        "meaning": "The quality of being thankful; readiness to show appreciation.",
+        "tags": ["noun"]
+    },
+    {
+        "word": "hesitate",
+        "meaning": "To pause before saying or doing something, often due to uncertainty.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "intricate",
+        "meaning": "Very detailed and complicated.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "justify",
+        "meaning": "To show or prove to be right or reasonable.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "keen",
+        "meaning": "Having or showing eagerness or enthusiasm.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "lucid",
+        "meaning": "Expressed clearly; easy to understand.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "meticulous",
+        "meaning": "Showing great attention to detail; very careful and precise.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "achieve",
+        "meaning": "To successfully reach a goal.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "borrow",
+        "meaning": "To take something for a short time and return it.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "expand",
+        "meaning": "To increase in size, number, or importance.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "frequent",
+        "meaning": "Happening often.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "gather",
+        "meaning": "To bring things or people together.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "harvest",
+        "meaning": "The process of collecting crops.",
+        "tags": ["noun", "verb"]
+    },
+    {
+        "word": "ignore",
+        "meaning": "To pay no attention to something or someone.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "lack",
+        "meaning": "The state of not having enough of something.",
+        "tags": ["noun", "verb"]
+    },
+    {
+        "word": "maintain",
+        "meaning": "To keep something in good condition.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "nearby",
+        "meaning": "Not far away.",
+        "tags": ["adjective", "adverb"]
+    },
+    {
+        "word": "obtain",
+        "meaning": "To get or gain something.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "prefer",
+        "meaning": "To like one thing more than another.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "rare",
+        "meaning": "Not common; unusual.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "shallow",
+        "meaning": "Not deep.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "tend",
+        "meaning": "To often do something in a particular way.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "unite",
+        "meaning": "To bring people or things together.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "variety",
+        "meaning": "A number of different types of the same thing.",
+        "tags": ["noun"]
+    },
+    {
+        "word": "wealth",
+        "meaning": "A large amount of money or valuable things.",
+        "tags": ["noun"]
+    },
+    {
+        "word": "youth",
+        "meaning": "The period of life when someone is young.",
+        "tags": ["noun"]
+    },
+    {
+        "word": "zone",
+        "meaning": "An area that is different from others around it.",
+        "tags": ["noun"]
+    },
+       {
+        "word": "novel",
+        "meaning": "New or unusual in an interesting way.",
+        "tags": ["adjective", "noun"]
+    },
+    {
+        "word": "obsolete",
+        "meaning": "No longer produced or used; out of date.",
+        "tags": ["adjective"]
+    },
+    {
+        "word": "persevere",
+        "meaning": "To continue in a course of action even in the face of difficulty.",
+        "tags": ["verb"]
+    },
+    {
+        "word": "rigorous",
+        "meaning": "Extremely thorough, careful, and accurate.",
+        "tags": ["adjective"]
+    }
+]
