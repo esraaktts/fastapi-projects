@@ -29,9 +29,6 @@ def add_word_to_history(ip: str, word: str):
     })
     r.hset("history", ip, json.dumps(history))
 
-def get_full(ip: str):
-    return get_history(ip)
-
 def export_history(ip, format="json"):
     data = get_history(ip)
     if not data:
@@ -79,3 +76,4 @@ def history_page(ip, limit=10, page=1):
         "total": len(all_data),
         "data": part
     }
+
