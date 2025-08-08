@@ -1,20 +1,19 @@
 import requests
-from models import WordResponse
-import redis
+from app.models.models import WordResponse
 import json
+from redis import Redis
 
-def word_info(word: str):
-    r = redis.Redis(host='localhost', port=6379, decode_responses=True)
-
+def word_info(word: str, r: Redis):
     cached_word = r.get(f"word:{word}")
     if cached_word:
         return WordResponse(**json.loads(cached_word))
-
+    
     url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
 
     try:
         resp = requests.get(url)
         data = resp.json()
+        print(data)
 
         if not isinstance(data, list):
             new_response = WordResponse(
