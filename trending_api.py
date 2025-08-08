@@ -1,30 +1,27 @@
-import redis
+from redis import Redis
 import json
+from fastapi import HTTPException
+from app.models.models import TrendingResponse
 
-def trending_words(word: str):
+def add_word_to_trending(word: str, r: Redis):
     try:
-        r = redis.Redis(host='localhost', port=6379, decode_responses=True)
-        trending_string = r.get("trending")
-
-        if trending_string:
-            counts = json.loads(trending_string)
+        trending = r.get("trending")
+        if trending:
+            counts = json.loads(trending)
         else:
             counts = {}
 
-        if word in counts:
-            counts[word] += 1
-        else:
-            counts[word] = 1
-
+        counts[word] = counts.get(word, 0) + 1
         r.set("trending", json.dumps(counts))
-
-        trending_words = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]
-    
-        print("Trending words (top 10):")
-        for word, count in trending_words:
-            print(f"{word}:{count}")
-
-        return {"Trending Words:": dict(trending_words)} 
-
     except Exception:
-        print("Please check the Redis server connection and ensure it is running.")
+        raise HTTPException(status_code=500, detail="Error adding word to trending list. Please try again later.")
+
+
+def trending_words(r : Redis, limit: int = 10):
+    trending = r.get("trending")
+    if trending:
+        counts = json.loads(trending)
+    else:
+        counts = {}
+    top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:limit]
+    return TrendingResponse(trending={word: count for word, count in top})
