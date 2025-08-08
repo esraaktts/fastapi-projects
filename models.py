@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional, Dict, Union
+from typing import List, Optional, Dict
 
 class WordResponse(BaseModel):
 	word: Optional[str]
@@ -17,3 +17,16 @@ class DailyResponse(BaseModel):
     title: Optional[str] = None
     message: Optional[str] = None
     resolution: Optional[str] = None
+    
+class TrendingResponse(BaseModel):
+    trending: Dict[str, int]
+
+class HistoryItem(BaseModel):
+    word: str
+    timestamp: str
+
+class HistoryPageResponse(BaseModel):
+    page: int
+    limit: int
+    total: int
+    data: List[HistoryItem]
