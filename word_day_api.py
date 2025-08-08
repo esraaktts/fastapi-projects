@@ -1,41 +1,55 @@
-import redis
 import json
-import random
-from models import DailyResponse
+from app.models.models import DailyResponse
+from redis import Redis, exceptions
+from fastapi import HTTPException
 
-def word_of_the_day():
+def word_of_the_day(r: Redis):
     try:
-        r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+        daily_word = r.get("word_of_the_day")
 
-        selected_word = r.get("daily_word")
-
-        if selected_word:
-            word_redis = json.loads(selected_word)
-            return word_redis
-
+        if daily_word:
+            word_redis = r.get(f"random_word:{daily_word}")
+            if word_redis:
+                word_data = json.loads(word_redis)
+                return DailyResponse(
+                    word=daily_word,
+                    definition=word_data.get("meaning"),
+                    tags=word_data.get("tags", [])
+                )
+            else:
+                return DailyResponse(
+                    word=daily_word,
+                    definition=None,
+                    tags=None,
+                    title="Incomplete Data",
+                    message=f"Details for '{daily_word}' not found in Redis.",
+                    resolution="Please try again later."
+                )
         else:
-            print("No word of the day found in Redis, generating a new one.")
-            
-            with open('saved_words.json', 'r') as file:
-                word_list = json.load(file)
-                
-            random_word = random.choice(word_list)
-            new_word = {
-                "word": random_word["word"],
-                "definition": random_word["meaning"],
-                "tags": random_word["tags"]
-            }
+            word_json = r.srandmember("words_unused")
+            if not word_json:
+                return DailyResponse(
+                    word=None,
+                    definition=None,
+                    tags=None,
+                    title="No Words Available",
+                    message="No unused words left in Redis.",
+                    resolution="Please add more words or reset used words."
+                )
+            word_data = json.loads(word_json)
+            selected_word = word_data["word"]
 
-            r.set("daily_word", json.dumps(new_word),ex=86400)
-            print("New word of the day set in Redis.")               
-            return new_word
+            r.srem("words_unused", word_json)
+            r.sadd("words_used", word_json)
+
+            r.set("word_of_the_day", selected_word, ex=86400)
+            r.set(f"random_word:{selected_word}", word_json, ex=86400)
+
+            return DailyResponse(
+                word=selected_word,
+                definition=word_data.get("meaning"),
+                tags=word_data.get("tags", [])
+            )
 
     except Exception:
-        return DailyResponse(
-            word = None,
-            definition = None,
-            tags=None,
-            title = "Service Unavailable",
-            message = "we couldn't locate a definition for the word you entered.",
-            resolution = "Please try again later."
-        )
+        raise HTTPException(status_code=503, detail="Redis connection failed.")
