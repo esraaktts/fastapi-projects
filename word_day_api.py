@@ -6,6 +6,8 @@ from fastapi import HTTPException
 def word_of_the_day(r: Redis):
     try:
         daily_word = r.get("word_of_the_day")
+        if daily_word and isinstance(daily_word, bytes):
+            daily_word = daily_word.decode()
 
         if daily_word:
             word_redis = r.get(f"random_word:{daily_word}")
@@ -53,3 +55,4 @@ def word_of_the_day(r: Redis):
 
     except Exception:
         raise HTTPException(status_code=503, detail="Redis connection failed.")
+
