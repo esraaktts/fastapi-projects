@@ -2,3 +2,5 @@ fastapi
 requests
 pydantic
 redis
+chainlit
+fakeredis>=2.0.0
